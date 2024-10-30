@@ -3,41 +3,26 @@
 
 #define PI 3.1415
 
-int main(int argc, char*argv[])
-{
-    if (argc == 1) 
-    {
+int main(int argc, char*argv[]) {
+    if (argc == 1) {
         printf("No input given!\n");
     }
-
-    else if (argc == 2)
-    {
-        printf("Two arguments needed!");
+    else if (argc == 2) {
+        printf("Two arguments needed!\n");
     }
-
-    else if (argc == 3)
-    {
+    else if (argc == 3) {
         double radius = atof(argv[1]);
         double height = atof(argv[2]);
-
-        if (radius < 0 || height < 0)
-
-        {
-        printf("The radius or height can not be negative");
+        if (radius < 0 || height < 0) {
+            printf("The radius or height cannot be negative\n");
         }
-
-        else 
-        {
+        else {
             double cylinder_area = 2 * PI * radius * (radius + height);
             printf("%.2lf\n", cylinder_area);
         }
-
     }
-    else 
-    {
+    else {
         printf("Too many arguments\n");
     }
-
-    return (0);
-
-    }
+    return 0;
+}

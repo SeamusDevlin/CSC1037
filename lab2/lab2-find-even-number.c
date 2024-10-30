@@ -2,24 +2,21 @@
 #include <stdlib.h>
 
 int main(int argc, char*argv[]) {
-    int length = argc - 1;
-    int numbers[length];
-    int even = 0;
+    int array[10];
+    int even_found = 0;
 
-    for(int i = 0; i < length; i++) {
-        numbers[i] = atoi(argv[i+1]);
+    for (int i = 1; i < argc; i++) {
+        array[i] = atoi(argv[i]);
     }
 
-    for (int i = 0; i < length; i++) {
-        if (numbers[i] % 2 == 0) {
-            even++;
-            printf("%d - %d\n", i, numbers[i]);
+    for (int i = 1; i < argc; i++) {
+        if (array[i] % 2 == 0) {
+            printf("%d - %d\n", i - 1, array[i]);
+            even_found = 1;
         }
     }
-
-    if (even == 0) {
-        printf("Not found!\n"); 
+    if (!even_found) {
+            printf("Not found!\n");
     }
-
     return 0;
 }
